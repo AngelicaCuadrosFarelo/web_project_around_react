@@ -1,6 +1,5 @@
 .popup {
   width: 100%;
-  height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
@@ -49,7 +48,8 @@
 
 .popup__container {
   position: relative;
-  width: 35%;
+  width: 30%;
+  min-width: 250px;
   background-color: white;
   border-radius: 8px;
 }
@@ -131,7 +131,7 @@
   font-size: 40px;
   position: absolute;
   top: -42px;
-  right: -22px;
+  right: 0;
 }
 
 .popup__button-close:hover {
@@ -167,36 +167,22 @@
   overflow: hidden;
 }
 
-#closewindow {
-  padding: 0;
-  bottom: 91%;
-  font-size: 40px;
-}
-
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .popup__container {
     width: 40%;
   }
-  #closewindow {
-    bottom: 88%;
-    font-size: 30px;
-  }
-}
 
-@media only screen and (min-width: 320px) and (max-width: 767px) {
-  #overlay {
-    flex-direction: column;
-  }
-  .popup__container {
-    width: 90%;
-  }
-  .popup__image {
-    max-width: 45vh;
-    max-height: 45vh;
-  }
-  #closewindow {
-    padding: 25px;
-    bottom: 25%;
-    font-size: 20px;
+  @media only screen and (min-width: 320px) and (max-width: 767px) {
+    #overlay {
+      flex-direction: column;
+    }
+    .popup__container {
+      width: 90%;
+    }
+
+    .popup__image {
+      max-width: 45vh;
+      max-height: 45vh;
+    }
   }
 }
