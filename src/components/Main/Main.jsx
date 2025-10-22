@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Popup from "./components/Popup/Popup";
 import NewCard from "../NewCard/NewCard";
-import EditAvatar from "../Avatar/EditAvatar";
-import EditProfile from "../EditProfile/EditProfile";
+import EditAvatar from "./components/Avatar/EditAvatar";
+import EditProfile from "./components/EditProfile/EditProfile";
 import avatar from "../../images/JacquesCousteau.jpg";
 import lapiz from "../../images/lapiz.svg";
 import add from "../../images/add.svg";
@@ -65,8 +65,8 @@ function Main() {
           </div>
         </div>
         <div className="profile__info">
-          <h1 className="profile__title"></h1>
-          <p className="profile__subtitle"></p>
+          <h1 className="profile__title">Jacques Cousteau</h1>
+          <p className="profile__subtitle">Explorador</p>
         </div>
 
         <button
