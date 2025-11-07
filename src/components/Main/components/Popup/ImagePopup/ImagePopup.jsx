@@ -2,7 +2,7 @@ function ImagePopup(props) {
   const { name, link } = props.card;
 
   return (
-    <div id="popupwindow" class="popup">
+    <div id="popupwindow" className="popup">
       <div className="popup__container-window" id="popupcontainerwindow">
         <img
           className="popup__image"

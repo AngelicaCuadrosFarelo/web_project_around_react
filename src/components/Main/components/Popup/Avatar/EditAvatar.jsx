@@ -1,11 +1,24 @@
+import { useState, useContext, useRef } from "react";
+import CurrentUserContext from "../../../../../contexts/CurrentUserContext";
+
 function EditAvatar() {
+  const { onUpdateAvatar } = useContext(CurrentUserContext);
+  const inputRef = useRef(null);
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    onUpdateAvatar({
+      avatar: inputRef.current.value,
+    });
+  }
   return (
-    <form id="fotoPerfil" className="popup__form">
+    <form id="fotoPerfil" onSubmit={handleSubmit} className="popup__form">
       <fieldset className="popup__fieldset">
         <input
           type="url"
           id="avatarImg"
           name="url"
+          ref={inputRef}
           placeholder="Url de la imagen"
           className="popup__input"
           required
