@@ -3,7 +3,7 @@ import Main from "./Main/Main.jsx";
 import Footer from "./Footer/Footer.jsx";
 import { useEffect, useState } from "react";
 import { api } from "../utils/api.js";
-import CurrentUserContext from "../contexts/CurrentUserContext.jsx";
+import CurrentUserContext from "../contexts/CurrentUserContext.js";
 
 function App() {
   const [currentUser, setCurrentUser] = useState({});
