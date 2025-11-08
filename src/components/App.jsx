@@ -9,6 +9,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [popup, setPopup] = useState(null);
   const [cards, setCards] = useState([]);
+
   useEffect(() => {
     api
       .getInitialCards()
@@ -21,6 +22,7 @@ function App() {
   }, []);
   async function handleCardDelete(card) {
     await api.deleteCard(card._id).then(() => {
+      handleClosePopup();
       setCards((prevCards) =>
         prevCards.filter((prevCard) => prevCard._id !== card._id)
       );

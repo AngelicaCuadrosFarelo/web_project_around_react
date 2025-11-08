@@ -1,11 +1,16 @@
 import ImagePopup from "../Popup/ImagePopup/ImagePopup";
 import trash from "../../../../images/Trash.svg";
 import like from "../../../../images/like.svg";
+import RemoveCard from "../Popup/RemoveCard/RemoveCard";
 
 function Card(props) {
   const { name, link, isLiked } = props.card;
   const { handleOpenPopup, onCardLike, onCardDelete } = props;
 
+  const removeCardPopup = {
+    title: "¿Estás seguro/a?",
+    children: <RemoveCard onComfirm={onCardDelete} />,
+  };
   const imageComponent = {
     children: <ImagePopup card={{ name, link }} />,
   };
@@ -13,9 +18,7 @@ function Card(props) {
   const cardLikeButtonClassName = `card__like-button ${
     isLiked ? "card__like-black" : ""
   }`;
-  const handleDeleteClick = () => {
-    onCardDelete();
-  };
+
   const handleLikeClick = () => {
     onCardLike();
   };
@@ -25,7 +28,7 @@ function Card(props) {
         <img
           src={trash}
           alt="Trash"
-          onClick={handleDeleteClick}
+          onClick={() => handleOpenPopup(removeCardPopup)}
           className="card__trash"
         />
         <img
